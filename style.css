@@ -1,0 +1,54 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic);
+body {
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #3e3f3a;
+    font-style: normal;
+    font-size: 18px;
+    margin: 0;
+    line-height: 25px
+}
+h1, h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #000
+}
+a {
+    color: #ff0000;
+    text-decoration: none
+}
+a:hover {
+    text-decoration: underline
+}
+.contacts {
+    margin-top: 40px
+}
+ul li {
+    margin-bottom: 6px
+}
+ul.contact-list {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+.content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+}
+#visualiser {
+    position : absolute;
+    bottom : 0;
+    height : 300px;
+    width: 100%;
+}
