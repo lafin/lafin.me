@@ -47,8 +47,130 @@ ul.contact-list {
     width: 250px;
 }
 #visualiser {
-    position : absolute;
-    bottom : 0;
-    height : 300px;
+    position: absolute;
+    bottom: 0;
+    height: 300px;
     width: 100%;
+}
+.man {
+    position: absolute;
+    margin-top: 148px;
+    margin-left: 197px;
+}
+.head {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid;
+    position: absolute;
+    margin-top: 15px;
+    margin-left: -9px;
+}
+.body {
+    background: #000;
+    height: 40px;
+    width: 3px;
+    position: absolute;
+    margin-top: 38px;
+    transform: rotate(-10deg);
+}
+.hand {
+    margin-top: 40px;
+    height: 42px;
+    width: 3px;
+    background: #000;
+    float: left;
+    transform: rotate(30deg);
+    margin-left: -13px;
+}
+.thigh {
+    background: #000;
+    height: 3px;
+    width: 30px;
+    position: absolute;
+    margin-top: 80px;
+    margin-left: 3px;
+    transform: rotate(10deg);
+}
+.left-leg, .right-leg {
+    margin-top: 84px;
+    height: 30px;
+    width: 3px;
+    background: #000;
+    float: left;
+    margin-left: 31px;
+    position: absolute;
+}
+.left-leg:after, .right-leg:after {
+    content: '';
+    width: 10px;
+    height: 3px;
+    background: #000;
+    display: inline-block;
+    position: absolute;
+    margin-top: 30px;
+}
+.right-leg {
+    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    animation: movement1 1s alternate infinite ease-out;
+    -webkit-animation: movement1 1s alternate infinite ease-out;
+    -moz-animation: movement1 1s alternate infinite ease-out;
+}
+.left-leg {
+    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    animation: movement2 1s alternate infinite ease-out;
+    -webkit-animation: movement2 1s alternate infinite ease-out;
+    -moz-animation: movement2 1s alternate infinite ease-out;
+}
+@keyframes movement1 {
+    0% {
+        transform: rotate(-30deg);
+    }
+    100% {
+        transform: rotate(30deg);
+    }
+}
+@-webkit-keyframes movement1 {
+    0% {
+        -webkit-transform: rotate(-30deg);
+    }
+    100% {
+        -webkit-transform: rotate(30deg);
+    }
+}
+@-moz-keyframes movement1 {
+    0% {
+        -moz-transform: rotate(-30deg);
+    }
+    100% {
+        -moz-transform: rotate(30deg);
+    }
+}
+@keyframes movement2 {
+    0% {
+        transform: rotate(30deg);
+    }
+    100% {
+        transform: rotate(-30deg);
+    }
+}
+@-webkit-keyframes movement2 {
+    0% {
+        -webkit-transform: rotate(30deg);
+    }
+    100% {
+        -webkit-transform: rotate(-30deg);
+    }
+}
+@-moz-keyframes movement2 {
+    0% {
+        -moz-transform: rotate(30deg);
+    }
+    100% {
+        -moz-transform: rotate(-30deg);
+    }
 }

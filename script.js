@@ -1,3 +1,5 @@
+/* globals Nanobar: false */
+
 var context = null;
 if ('webkitAudioContext' in window) {
     context = new window.webkitAudioContext();
@@ -6,6 +8,11 @@ if ('webkitAudioContext' in window) {
 } else {
     throw 'Audio api not support';
 }
+
+var nanobar = new Nanobar({
+    bg: '#ff0000',
+    id: 'nanobar'
+});
 
 var Player = function (url) {
     function playSound(buffer) {
@@ -28,8 +35,11 @@ var Player = function (url) {
         request = new XMLHttpRequest();
     request.open('GET', url, true);
     request.responseType = 'arraybuffer';
+    request.onprogress = function (data) {
+        nanobar.go(data.loaded / data.total * 100 | 0);
+    };
     request.onload = function () {
-        context.decodeAudioData(request.response, function (buffer) {
+        context.decodeAudioData(this.response, function (buffer) {
             playSound(buffer);
         }, console.error);
     };
@@ -66,7 +76,7 @@ var Visualiser = function (id) {
 };
 
 var visualiser = new Visualiser('visualiser');
-var player = new Player('sound.mp3');
+var player = new Player('https://dl.dropboxusercontent.com/u/7211201/sound.mp3');
 
 function play() {
     visualiser.draw(player.getVisualisationData());
