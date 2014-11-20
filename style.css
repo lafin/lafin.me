@@ -73,6 +73,8 @@ ul.contact-list {
     position: absolute;
     margin-top: 38px;
     transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
 }
 .hand {
     margin-top: 40px;
@@ -80,8 +82,10 @@ ul.contact-list {
     width: 3px;
     background: #000;
     float: left;
-    transform: rotate(30deg);
     margin-left: -13px;
+    transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
 }
 .thigh {
     background: #000;
@@ -91,6 +95,8 @@ ul.contact-list {
     margin-top: 80px;
     margin-left: 3px;
     transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
 }
 .left-leg, .right-leg {
     margin-top: 84px;
