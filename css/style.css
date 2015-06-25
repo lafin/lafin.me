@@ -1,0 +1,108 @@
+.document {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0
+}
+
+.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+.profile {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.avatar {
+    display: inline-block;
+    overflow: hidden;
+    width: 245px;
+    height: 245px;
+    border-radius: 50%;
+    background: url('http://www.gravatar.com/avatar/ded551889984f52e6e5e2c5df0aaff86?size=250.png') no-repeat;
+    background-size: 245px 245px;
+    box-shadow: inset 0 0 2px 0 #fff
+}
+
+.networks {
+    margin: 0 auto;
+}
+
+.network {
+    display: inline-block;
+    vertical-align: top;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 10px;
+    color: #333;
+    font: 14px/1 FontAwesome;
+    font-size: 20px;
+    text-decoration: none;
+    text-rendering: auto;
+    opacity: .5;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    -webkit-transition: opacity ease-out .5s,border ease-out .5s;
+    transition: opacity ease-out .5s,border ease-out .5s;
+    -webkit-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    transform: translate(0,0);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.network:visited, .network:hover {
+    color: #333;
+    text-decoration: none
+}
+
+.network:hover, .network:active {
+    opacity: 1;
+    border-color: #333
+}
+
+.network-linkedin:before {
+    content: '\f0e1'
+}
+
+.network-mail:before {
+    content: '\f003'
+}
+
+.network-skype:before {
+    content: '\f17e'
+}
+
+.network-github:before {
+    content: '\f09b'
+}
+
+.profile {
+    text-align: center
+}
+
+.profile {
+    font-family: verdana, sans-serif
+}
+
+.name {
+    color: #333
+}
+
+.description {
+    color: rgba(51,51,51,.75)
+}
+
+.summary {
+    color: rgba(51,51,51,.5);
+    font-size: 14px
+}
