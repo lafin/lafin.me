@@ -35,29 +35,19 @@
 }
 
 .network {
-    display: inline-block;
-    vertical-align: top;
-    width: 20px;
-    height: 20px;
-    margin: 0 5px;
-    padding: 10px;
-    color: #333;
-    font: 14px/1 FontAwesome;
-    font-size: 20px;
-    text-decoration: none;
-    text-rendering: auto;
-    opacity: .5;
-    border: 1px solid transparent;
-    border-radius: 50%;
-    background-repeat: no-repeat;
-    background-size: 20px 20px;
-    -webkit-transition: opacity ease-out .5s,border ease-out .5s;
-    transition: opacity ease-out .5s,border ease-out .5s;
-    -webkit-transform: translate(0,0);
-    -ms-transform: translate(0,0);
-    transform: translate(0,0);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  padding: 10px;
+  color: #333;
+  font: 14px/1 FontAwesome;
+  font-size: 20px;
+  text-decoration: none;
+  opacity: .5;
+  border: 1px solid transparent;
+  border-radius: 50%;
 }
 
 .network:visited, .network:hover {
