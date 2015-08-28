@@ -1,40 +1,59 @@
-.document {
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0
 }
 
 .outer {
-    display: table;
-    position: absolute;
-    height: 100%;
-    width: 100%;
+  display: table;
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 .middle {
-    display: table-cell;
-    vertical-align: middle;
+  display: table-cell;
+  vertical-align: middle;
 }
+.inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 .profile {
-    max-width: 600px;
-    margin: 0 auto;
+  text-align: center;
+  font-family: verdana, sans-serif;
+  padding: 5px;
 }
 
-.avatar {
-    display: inline-block;
-    overflow: hidden;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: url('//www.gravatar.com/avatar/e8b038459e337efd9ec23f60d50514d1?size=250.png') no-repeat;
-    background-size: 200px 200px;
-    box-shadow: inset 0 0 2px 0 #fff;
+.profile__avatar {
+  display: inline-block;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: url('//www.gravatar.com/avatar/e8b038459e337efd9ec23f60d50514d1?size=250.png') no-repeat;
+  background-size: 200px 200px;
+  box-shadow: inset 0 0 2px 0 #fff;
 }
 
-.networks {
-    margin: 0 auto;
+.profile__card__name {
+  color: #333
 }
 
-.network {
+.profile__card__position {
+  color: rgba(51,51,51,.75)
+}
+
+.profile__card__description {
+  color: rgba(51,51,51,.5);
+  font-size: 14px
+}
+
+.profile__networks {
+  margin: 0 auto;
+}
+
+.profile__networks__network {
   display: inline-block;
   vertical-align: top;
   width: 20px;
@@ -50,49 +69,30 @@
   border-radius: 50%;
 }
 
-.network:visited, .network:hover {
-    color: #333;
-    text-decoration: none
+.profile__networks__network:visited,
+.profile__networks__network:hover {
+  color: #333;
+  text-decoration: none
 }
 
-.network:hover, .network:active {
-    opacity: 1;
-    border-color: #333
+.profile__networks__network:hover,
+.profile__networks__network:active {
+  opacity: 1;
+  border-color: #333
 }
 
-.network-linkedin:before {
-    content: '\f0e1'
+.profile__networks__network--linkedin:before {
+  content: '\f0e1'
 }
 
-.network-mail:before {
-    content: '\f003'
+.profile__networks__network--mail:before {
+  content: '\f003'
 }
 
-.network-skype:before {
-    content: '\f17e'
+.profile__networks__network--skype:before {
+  content: '\f17e'
 }
 
-.network-github:before {
-    content: '\f09b'
-}
-
-.profile {
-    text-align: center
-}
-
-.profile {
-    font-family: verdana, sans-serif
-}
-
-.name {
-    color: #333
-}
-
-.description {
-    color: rgba(51,51,51,.75)
-}
-
-.summary {
-    color: rgba(51,51,51,.5);
-    font-size: 14px
+.profile__networks__network--github:before {
+  content: '\f09b'
 }
