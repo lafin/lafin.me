@@ -31,7 +31,7 @@ body {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background: url('//www.gravatar.com/avatar/e8b038459e337efd9ec23f60d50514d1?size=250.png') no-repeat;
+  background: url('//www.gravatar.com/avatar/e8b038459e337efd9ec23f60d50514d1?size=400.png') no-repeat;
   background-size: 200px 200px;
   box-shadow: inset 0 0 2px 0 #fff;
 }
@@ -79,20 +79,4 @@ body {
 .profile__networks__network:active {
   opacity: 1;
   border-color: #333
-}
-
-.profile__networks__network--linkedin:before {
-  content: '\f0e1'
-}
-
-.profile__networks__network--mail:before {
-  content: '\f003'
-}
-
-.profile__networks__network--skype:before {
-  content: '\f17e'
-}
-
-.profile__networks__network--github:before {
-  content: '\f09b'
 }
