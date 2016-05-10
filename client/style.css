@@ -4,25 +4,20 @@ body {
   padding: 0
 }
 
-.outer {
-  display: table;
-  position: absolute;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   width: 100%;
-}
-.middle {
-  display: table-cell;
-  vertical-align: middle;
-}
-.inner {
-  max-width: 600px;
-  margin: 0 auto;
+  position: absolute;
 }
 
 .profile {
   text-align: center;
   font-family: verdana, sans-serif;
   padding: 5px;
+  max-width: 450px;
 }
 
 .profile__avatar {
