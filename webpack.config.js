@@ -1,5 +1,5 @@
 var rucksack = require('rucksack-css')
-var less = require('postcss-less')
+var precss = require('precss')
 var webpack = require('webpack')
 var path = require('path')
 
@@ -49,10 +49,10 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   postcss: [
+    precss,
     rucksack({
       autoprefixer: true
-    }),
-    less
+    })
   ],
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
