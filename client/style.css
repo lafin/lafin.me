@@ -66,10 +66,24 @@ body {
         color: $gray;
         text-decoration: none
       }
-
       &:hover, &:active {
         opacity: 1;
         border-color: $gray;
+      }
+      &--linkedin:before {
+        content: '\f0e1'
+      }
+      &--mail:before {
+        content: '\f003'
+      }
+      &--skype:before {
+        content: '\f17e'
+      }
+      &--github:before {
+        content: '\f09b'
+      }
+      &--pdf:before {
+        content: '\f1c1'
       }
     }
   }
