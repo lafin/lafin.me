@@ -1,4 +1,3 @@
-import 'font-awesome/css/font-awesome.css'
 import style from 'style.css'
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

@@ -5,6 +5,17 @@ body {
   padding: 0
 }
 
+@font-face {
+  font-family: 'fontello';
+  src: url('./font/fontello.eot?18390219');
+  src: url('./font/fontello.eot?18390219#iefix') format('embedded-opentype'),
+       url('./font/fontello.woff?18390219') format('woff'),
+       url('./font/fontello.ttf?18390219') format('truetype'),
+       url('./font/fontello.svg?18390219#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -55,7 +66,7 @@ body {
       margin: 0 5px;
       padding: 10px;
       color: $gray;
-      font: 14px/1 FontAwesome;
+      font: 14px/1 fontello;
       font-size: 20px;
       text-decoration: none;
       opacity: .5;
@@ -71,19 +82,19 @@ body {
         border-color: $gray;
       }
       &--linkedin:before {
-        content: '\f0e1'
+        content: '\e801'
       }
       &--mail:before {
-        content: '\f003'
+        content: '\e802'
       }
       &--skype:before {
-        content: '\f17e'
+        content: '\e804'
       }
       &--github:before {
-        content: '\f09b'
+        content: '\e800'
       }
       &--pdf:before {
-        content: '\f1c1'
+        content: '\e803'
       }
     }
   }
