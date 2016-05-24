@@ -9,7 +9,7 @@ var CompressionPlugin = require('compression-webpack-plugin')
 
 var contentPath = path.join(__dirname, './client')
 
-function isDev () {
+function isDev() {
   return process.env.NODE_ENV === 'development';
 }
 
@@ -27,6 +27,9 @@ module.exports = {
       test: /\.jade$/,
       include: /client/,
       loader: 'jade-loader'
+    }, {
+      test: /manifest\.json$/,
+      loader: 'file?name=manifest.json!web-app-manifest-loader'
     }, {
       test: /\.css$/,
       loader: ExtractTextPlugin.extract(

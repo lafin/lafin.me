@@ -1,0 +1,9 @@
+{
+  "name": "lafin.me",
+  "short_name": "lafin.me",
+  "icons": [],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#fff"
+}
