@@ -6,8 +6,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 3000",
-    "build": "NODE_ENV=production webpack --progress --colors"
+    "clean": "rm -rf ./dist && rm -f service-worker.js*",
+    "start": "npm run clean && webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 3000",
+    "build": "npm run clean && NODE_ENV=production webpack --progress --colors"
   },
   "license": "MIT",
   "devDependencies": {

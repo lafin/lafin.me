@@ -29,7 +29,7 @@ module.exports = {
       loader: 'jade-loader'
     }, {
       test: /manifest\.json$/,
-      loader: 'file?name=manifest.json!web-app-manifest-loader'
+      loader: 'file-loader?name=[name].[ext]!web-app-manifest-loader'
     }, {
       test: /\.css$/,
       loader: ExtractTextPlugin.extract(
@@ -42,7 +42,10 @@ module.exports = {
       test: /\.js$/,
       include: /client/,
       loader: 'babel-loader'
-    }, ],
+    }, {
+      test: /service-worker\.js$/,
+      loader: 'file-loader?name=../[name].[ext]'
+    }],
   },
   resolve: {
     modulesDirectories: [
@@ -60,7 +63,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: '../index.html',
-      template: 'index.jade'
+      template: 'index.jade',
+      inject: true
     }),
     new ExtractTextPlugin('style.css', {
       allChunks: true
