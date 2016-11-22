@@ -1,9 +1,9 @@
 var cacheName = 'lafin-v1';
 var filesToCache = [
+  '/',
   '/dist/style.css',
   '/dist/bundle.js',
   '/dist/vendor.bundle.js',
-  '/'
 ];
 
 self.addEventListener('install', function(e) {
@@ -29,23 +29,22 @@ self.addEventListener('activate', function(e) {
 });
 
 self.addEventListener('fetch', function(e) {
-  if (filesToCache.slice(0, -1).indexOf(e.request.url) > -1) {
-    e.respondWith(
-      caches.match(e.request).then(function(response) {
-        if (response) {
-          return response;
-        } else {
-          return fetch(e.request)
-            .then(function(response) {
-              return caches.open(cacheName).then(function(cache) {
-                cache.put(e.request.url, response.clone());
-                return response;
-              });
+  e.respondWith(
+    caches.match(e.request).then(function(response) {
+      if (response) {
+        return response;
+      } else {
+        return fetch(e.request).then(function(response) {
+          return caches.open(cacheName).then(function(cache) {
+            cache.put(e.request.url, response.clone()).catch(function(error) {
+              console.error('Put the cache failed with ' + error);
             });
-        }
-      })
-    );
-  } else {
-    return fetch(e.request);
-  }
+            return response;
+          });
+        }).catch(function(error) {
+          console.error('Fetch data failed with ' + error);
+        });
+      }
+    })
+  );
 });

@@ -29,7 +29,7 @@ module.exports = {
       loader: 'jade-loader'
     }, {
       test: /manifest\.json$/,
-      loader: 'file-loader?name=[name].[ext]!web-app-manifest-loader'
+      loader: 'file-loader?name=../[name].[ext]!web-app-manifest-loader'
     }, {
       test: /\.css$/,
       loader: ExtractTextPlugin.extract(

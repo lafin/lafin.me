@@ -1,5 +1,6 @@
 import 'style.css'
 import 'service-worker.js'
+import 'manifest.json'
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/service-worker.js', {
