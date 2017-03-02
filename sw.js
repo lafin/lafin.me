@@ -26,9 +26,11 @@ self.addEventListener("fetch", function (e) {
         } else {
             return fetch(e.request).then(function (response) {
                 return caches.open(cacheName).then(function (cache) {
-                    cache.put(e.request.url, response.clone()).catch(function (error) {
-                        console.error("Put the cache failed with " + error);
-                    });
+                    if (e.request.url.indexOf("lafin.me") > -1) {
+                        cache.put(e.request.url, response.clone()).catch(function (error) {
+                            console.error("Put the cache failed with " + error);
+                        });
+                    }
                     return response;
                 });
             }).catch(function (error) {
