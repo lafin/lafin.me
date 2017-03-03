@@ -20,12 +20,12 @@ function CustomLoaders () {
                 {
                     test: /sw\.js$/,
                     include: /client/,
-                    loader: "file-loader?name=../[name].[ext]"
+                    loader: "file-loader?name=[name].[ext]"
                 },
                 {
                     test: /manifest\.json$/,
                     include: /client/,
-                    loader: "file-loader?name=../[name].[ext]!web-app-manifest-loader"
+                    loader: "file-loader?name=[name].[ext]!web-app-manifest-loader"
                 }
             ]
         }

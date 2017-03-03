@@ -14,7 +14,7 @@ exports.productionPlugins = [
     new HtmlWebpackPlugin({
         inject: true,
         template: "./client/index.jade",
-        filename: "../index.html"
+        filename: "index.html"
     }),
     new webpack.LoaderOptionsPlugin({
         minimize: true,

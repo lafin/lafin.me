@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - "6"
+branches:
+  only:
+    - master
+before_install: npm install -g yarn
+install: yarn
+script: yarn build
+after_success: |
+  if [ -n "$GITHUB_API_KEY" ]; then
+    cd "$TRAVIS_BUILD_DIR"
+    cp CNAME ./dist
+    cd dist
+    git init
+    git checkout -b gh-pages
+    git add .
+    git -c user.name='lafin' -c user.email='kuvakin@gmail.com' commit -m 'Updated Github pages'
+    git push -f -q https://lafin:$GITHUB_API_KEY@github.com/lafin/lafin.me.git gh-pages
+    cd "$TRAVIS_BUILD_DIR"
+  fi

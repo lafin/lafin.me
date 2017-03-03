@@ -2,8 +2,15 @@ import "./style.css";
 import "./sw.js";
 import "./manifest.json";
 
+const swPath = "/sw.js";
 if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/sw.js", {
+    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for(let registration of registrations) {
+            if (registration.active.scriptURL.slice(registration.scope.length-1) !== swPath)
+                registration.unregister();
+        }
+    });
+    navigator.serviceWorker.register(swPath, {
         scope: "/"
     }).then(function() {
         console.info("Registration succeeded.");
