@@ -1,5 +1,6 @@
 const { webpack } = require("@webpack-blocks/webpack2");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ScriptExtHtmlWebpackPlugin = require("script-ext-html-webpack-plugin");
 
 exports.basePlugins = [];
 
@@ -15,6 +16,9 @@ exports.productionPlugins = [
         inject: true,
         template: "./client/index.jade",
         filename: "index.html"
+    }),
+    new ScriptExtHtmlWebpackPlugin({
+        defaultAttribute: "async"
     }),
     new webpack.LoaderOptionsPlugin({
         minimize: true,
