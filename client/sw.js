@@ -1,8 +1,8 @@
-var cacheName = "lafin-v2";
+var cacheName = "lafin-v3";
 var filesToCache = [
     "/",
-    "/dist/main.css",
-    "/dist/bundle.js",
+    "/main.css",
+    "/bundle.js",
 ];
 
 self.addEventListener("install", function(e) {
@@ -28,6 +28,10 @@ self.addEventListener("activate", function(e) {
 });
 
 self.addEventListener("fetch", function(e) {
+    if (e.request.method !== "GET") {
+        console.warn("fetch event ignored.", e.request.method, e.request.url);
+        return;
+    }
     e.respondWith(
     caches.match(e.request).then(function(response) {
         if (response) {
@@ -35,7 +39,7 @@ self.addEventListener("fetch", function(e) {
         } else {
             return fetch(e.request).then(function(response) {
                 return caches.open(cacheName).then(function(cache) {
-                    if (e.request.url.indexOf("lafin.me") > -1) {
+                    if (e.request.url.indexOf(location.host) > -1) {
                         cache.put(e.request.url, response.clone()).catch(function(error) {
                             console.error("Put the cache failed with " + error);
                         });
