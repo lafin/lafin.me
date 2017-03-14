@@ -1,23 +1,8 @@
 import "./style.css";
-import "./sw.js";
 import "./manifest.json";
+import * as OfflinePluginRuntime from "offline-plugin/runtime";
 
-const swPath = "/sw.js";
-if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.getRegistrations().then(function(registrations) {
-        for(let registration of registrations) {
-            if (registration.active.scriptURL.slice(registration.scope.length-1) !== swPath)
-                registration.unregister();
-        }
-    });
-    navigator.serviceWorker.register(swPath, {
-        scope: "/"
-    }).then(function() {
-        console.info("Registration succeeded.");
-    }).catch(function(error) {
-        console.warn("Registration failed with " + error);
-    });
-}
+OfflinePluginRuntime.install();
 
 (function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments);},i[r].l=1*new Date();a=s.createElement(o),
