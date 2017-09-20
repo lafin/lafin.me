@@ -4,9 +4,8 @@ node_js:
 branches:
   only:
     - master
-before_install: npm install -g yarn
-install: yarn
-script: yarn build
+install: npm i
+script: npm run build
 after_success: |
   if [ -n "$GITHUB_API_KEY" ]; then
     cd "$TRAVIS_BUILD_DIR"

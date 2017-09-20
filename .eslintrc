@@ -1,13 +1,10 @@
 {
+    "extends": "airbnb",
     "env": {
         "browser": true,
         "commonjs": true,
         "es6": true,
         "node": true
-    },
-    "extends": "eslint:recommended",
-    "parserOptions": {
-        "sourceType": "module"
     },
     "rules": {
         "indent": [
@@ -22,10 +19,7 @@
             "error",
             "double"
         ],
-        "semi": [
-            "error",
-            "always"
-        ],
+        "comma-dangle":["error", "never"],
         "no-console": ["error", { "allow": ["warn", "error", "info"] }]
     }
 }
