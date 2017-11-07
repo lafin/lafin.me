@@ -6,6 +6,7 @@
   "license": "MIT",
   "homepage": "",
   "scripts": {
+    "start": "npm run dev",
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --progress --config webpack.config.dev.js",
     "build": "webpack -p --progress --config webpack.config.build.js"
   },

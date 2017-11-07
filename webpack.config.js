@@ -65,7 +65,7 @@ module.exports = {
             test: /\.jade$/,
             loader: "pug-loader"
         }, {
-            test: /\.(woff|woff2|eot|ttf|otf|svg|json)$/,
+            test: /\.(woff|woff2|eot|ttf|otf|svg|json|png|ico|xml)$/,
             loader: "file-loader",
             options: {
                 name: "[path][name].[ext]"
