@@ -23,12 +23,14 @@ html(lang="en")
     meta(name="twitter:title", content="Sergey Kuvakin - lafin")
     meta(name="twitter:description", content="Personal page's Sergey Kuvakin (lafin)")
 
+    meta(name="theme-color", content="#ffffff")
     link(rel="manifest", href="/assets/manifest.json")
     link(rel="apple-touch-icon", sizes="180x180", href="/assets/images/apple-touch-icon.png")
     link(rel="icon", type="image/png", sizes="32x32", href="/assets/images/favicon-32x32.png")
     link(rel="icon", type="image/png", sizes="16x16", href="/assets/images/favicon-16x16.png")
     link(rel="icon", type="image/ico", href="/assets/favicon.ico")
-    meta(name="theme-color", content="#ffffff")
+    each val, index in htmlWebpackPlugin.files.css
+        link(rel="stylesheet", href=val)
   body
     .container
       section.profile
@@ -46,3 +48,5 @@ html(lang="en")
           a.networks__network.networks__network--mail(itemprop="email", href="mailto:kuvakin@gmail.com", target="_blank", rel="noopener", title="email")
           a.networks__network.networks__network--skype(href="skype:ru_lafin?userinfo", target="_blank", rel="noopener", title="skype")
           a.networks__network.networks__network--pdf(href="https://www.dropbox.com/s/gqy2foeepmyci3y/Sergey_Kuvakin-Web_Developer_CV.pdf?dl=0", target="_blank", rel="noopener", title="cv")
+    each val, index in htmlWebpackPlugin.files.js
+        script(src=val)

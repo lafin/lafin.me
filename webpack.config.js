@@ -1,75 +1,62 @@
-const path = require("path");
-const webpack = require("webpack");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-
-const IS_DEV = (process.env.NODE_ENV === "dev");
-const dirNode = "node_modules";
-const dirApp = path.join(__dirname, "app");
-const dirAssets = path.join(__dirname, "assets");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackMd5Hash = require('webpack-md5-hash');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-    entry: {
-        // vendor: [],
-        bundle: path.join(dirApp, "index")
+    entry: { main: 'index.js' },
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].[chunkhash].js'
     },
     resolve: {
         modules: [
-            dirNode,
-            dirApp,
-            dirAssets
+            path.resolve(__dirname, "src"),
+            path.resolve(__dirname, "assets"),
+            path.resolve(__dirname, "node_modules")
+        ]
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: "babel-loader"
+            },
+            {
+                test: /\.scss$/,
+                use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
+            },
+            {
+                test: /\.jade$/,
+                loader: "pug-loader",
+                query: {
+                    root: path.resolve(__dirname, 'src'),
+                }
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf|svg|png|ico|xml)$/,
+                loader: "file-loader"
+            },
+            {
+                type: 'javascript/auto',
+                test: /\.json$/,
+                loader: "file-loader"
+            }
         ]
     },
     plugins: [
-        new webpack.DefinePlugin({
-            IS_DEV
+        new CleanWebpackPlugin('dist', {}),
+        new MiniCssExtractPlugin({
+            filename: 'style.[contenthash].css',
         }),
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, "index.jade")
-        })
-    ],
-    module: {
-        rules: [{
-            test: /\.js$/,
-            loader: "babel-loader",
-            exclude: /(node_modules)/,
-            options: {
-                compact: true
-            }
-        }, {
-            test: /\.css$/,
-            use: [
-                "style-loader",
-                {
-                    loader: "css-loader",
-                    options: {
-                        sourceMap: IS_DEV
-                    }
-                }
-            ]
-        }, {
-            test: /\.scss/,
-            use: [
-                "style-loader", {
-                    loader: "css-loader",
-                    options: {
-                        sourceMap: IS_DEV
-                    }
-                }, {
-                    loader: "sass-loader",
-                    options: {
-                        sourceMap: IS_DEV,
-                        includePaths: [dirAssets]
-                    }
-                }]
-        }, {
-            test: /\.jade$/,
-            loader: "pug-loader"
-        }, {
-            test: /\.(woff|woff2|eot|ttf|otf|svg|json|png|ico|xml)$/,
-            loader: "file-loader",
-            options: {
-                name: "[path][name].[ext]"
-            }
-        }]
-    }
+            inject: false,
+            hash: true,
+            template: './src/index.jade',
+            filename: 'index.html'
+        }),
+        new WebpackMd5Hash()
+    ]
 };
