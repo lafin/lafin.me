@@ -1,14 +1,4 @@
 import "styles/index.scss";
-import "manifest.json";
-import "favicon.ico";
-import "browserconfig.xml";
-import "safari-pinned-tab.svg";
-import "images/android-chrome-512x512.png";
-import "images/android-chrome-192x192.png";
-import "images/favicon-32x32.png";
-import "images/favicon-16x16.png";
-import "images/apple-touch-icon.png";
-import "images/mstile-150x150.png";
 
 if (process.env.NODE_ENV === "production") {
     /* eslint-disable */

@@ -10,11 +10,13 @@ body {
   font-family: fontello;
   src: url('../font/fontello.eot?18390219');
   src: url('../font/fontello.eot?18390219#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff2?18390219') format('woff2'),
        url('../font/fontello.woff?18390219') format('woff'),
        url('../font/fontello.ttf?18390219') format('truetype'),
        url('../font/fontello.svg?18390219#fontello') format('svg');
   font-weight: normal;
   font-style: normal;
+  font-display: optional;
 }
 
 .container {
