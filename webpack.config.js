@@ -42,7 +42,7 @@ module.exports = {
             },
             {
                 type: 'javascript/auto',
-                test: /\.json$/,
+                test: /\.(json|webmanifest)$/,
                 loader: "file-loader"
             }
         ]
@@ -61,7 +61,7 @@ module.exports = {
         new CopyWebpackPlugin([{
             from: 'assets/images/*.png'
         }, {
-            from: 'assets/*.{xml,ico,json,svg}'
+            from: 'assets/*.{xml,ico,json,svg,webmanifest}'
         }]),
         new WebpackMd5Hash()
     ]
