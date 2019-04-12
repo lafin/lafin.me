@@ -48,7 +48,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin('dist', {}),
+        new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: 'style.[contenthash].css',
         }),
@@ -59,9 +59,7 @@ module.exports = {
             filename: 'index.html'
         }),
         new CopyWebpackPlugin([{
-            from: 'assets/images/*.png'
-        }, {
-            from: 'assets/*.{xml,ico,json,svg,webmanifest}'
+            from: 'assets/**/*.{xml,ico,json,svg,png,webmanifest}'
         }]),
         new WebpackMd5Hash()
     ]

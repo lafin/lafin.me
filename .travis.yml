@@ -1,10 +1,10 @@
 language: node_js
 node_js:
-  - "8"
+  - "11"
 branches:
   only:
     - master
-install: npm i
+install: npm ci
 script: npm run build
 after_success: |
   if [ -n "$GITHUB_API_KEY" ]; then
