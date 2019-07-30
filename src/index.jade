@@ -2,26 +2,26 @@ doctype html
 html(lang="en")
   head
     meta(charset="utf-8")
-    title Sergey Kuvakin - lafin
+    title Sergei Kuvakin - lafin
     meta(name="viewport", content="width=device-width")
-    meta(name="description", content="Personal page's Sergey Kuvakin (lafin)")
+    meta(name="description", content="Personal page's Sergei Kuvakin (lafin)")
 
     // Google / Search Engine Tags
-    meta(itemprop="name", content="Sergey Kuvakin - lafin")
-    meta(itemprop="description", content="Personal page's Sergey Kuvakin (lafin)")
-    meta(itemprop="image", content="http://s.gravatar.com/avatar/ded551889984f52e6e5e2c5df0aaff86?s=150")
+    meta(itemprop="name", content="Sergei Kuvakin - lafin")
+    meta(itemprop="description", content="Personal page's Sergei Kuvakin (lafin)")
+    meta(itemprop="image", content="https://www.gravatar.com/avatar/e8b038459e337efd9ec23f60d50514d1?size=150.png")
 
     // Facebook Meta Tags
     meta(property="og:url", content="https://lafin.me")
     meta(property="og:type", content="website")
-    meta(property="og:title", content="Sergey Kuvakin - lafin")
-    meta(property="og:description", content="Personal page's Sergey Kuvakin (lafin)")
-    meta(property="og:image", content="http://s.gravatar.com/avatar/ded551889984f52e6e5e2c5df0aaff86?s=150")
+    meta(property="og:title", content="Sergei Kuvakin - lafin")
+    meta(property="og:description", content="Personal page's Sergei Kuvakin (lafin)")
+    meta(property="og:image", content="https://www.gravatar.com/avatar/e8b038459e337efd9ec23f60d50514d1?size=150.png")
 
     // Twitter Meta Tags
     meta(name="twitter:card", content="summary_large_image")
-    meta(name="twitter:title", content="Sergey Kuvakin - lafin")
-    meta(name="twitter:description", content="Personal page's Sergey Kuvakin (lafin)")
+    meta(name="twitter:title", content="Sergei Kuvakin - lafin")
+    meta(name="twitter:description", content="Personal page's Sergei Kuvakin (lafin)")
 
     meta(name="theme-color", content="#ffffff")
     link(rel="manifest", href="/assets/manifest.webmanifest")
@@ -29,10 +29,11 @@ html(lang="en")
     link(rel="icon", type="image/png", sizes="32x32", href="/assets/images/favicon-32x32.png")
     link(rel="icon", type="image/png", sizes="16x16", href="/assets/images/favicon-16x16.png")
     link(rel="icon", type="image/ico", href="/assets/favicon.ico")
-    link(rel="dns-prefetch", href="https://s.gravatar.com")
+    link(rel="dns-prefetch", href="https://www.gravatar.com")
     link(rel="dns-prefetch", href="https://github.com")
-    link(rel="dns-prefetch", href="https://ru.linkedin.com")
+    link(rel="dns-prefetch", href="https://linkedin.com")
     link(rel="dns-prefetch", href="https://www.dropbox.com")
+    link(rel="dns-prefetch", href="https://t.me")
     each val, index in htmlWebpackPlugin.files.css
         link(rel="stylesheet", href=val)
     .container
@@ -41,10 +42,10 @@ html(lang="en")
           img(src="https://www.gravatar.com/avatar/e8b038459e337efd9ec23f60d50514d1?size=400.png", srcset="https://www.gravatar.com/avatar/e8b038459e337efd9ec23f60d50514d1?size=200.png 1x, https://www.gravatar.com/avatar/e8b038459e337efd9ec23f60d50514d1?size=400.png 2x", alt="avatar", loading="lazy")
 
         section.card(itemscope="", itemtype="http://schema.org/Person")
-          h1.card__name(itemprop="name") Sergey Kuvakin
-          p.card__position(itemprop="jobTitle") Web Developer
+          h1.card__name(itemprop="name") Sergei Kuvakin
+          p.card__position(itemprop="jobTitle") Full Stack Web Developer
           p.card__description(itemprop="description")
-            | I like working as a full-stack web developer. Currently, I work with JavaScript, TypeScript, Node.js and popular frameworks, as well as participating in startups and creating new tools.
+            | I like to work as a full stack web developer. Currently, I work with JavaScript, TypeScript, Node.js and popular frameworks, as well as participating in startups and creating new tools.
         section.networks
           a.networks__network(href="https://github.com/lafin", target="_blank", rel="noopener noreferrer", title="github")
             svg
@@ -58,7 +59,7 @@ html(lang="en")
           a.networks__network(href="skype:ru_lafin?userinfo", target="_blank", rel="noopener noreferrer", title="skype")
             svg
               use(xlink:href="/assets/images/sprite.svg#skype")
-          a.networks__network(href="https://www.dropbox.com/s/gqy2foeepmyci3y/Sergey_Kuvakin-Web_Developer_CV.pdf?dl=0", target="_blank", rel="noopener noreferrer", title="cv")
+          a.networks__network(href="https://www.dropbox.com/s/bd4ngqhj71ycrog/sergei_kuvakin_cv.pdf?dl=0", target="_blank", rel="noopener noreferrer", title="cv")
             svg
               use(xlink:href="/assets/images/sprite.svg#pdf")
     each val, index in htmlWebpackPlugin.files.js
