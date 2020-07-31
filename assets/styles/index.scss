@@ -1,9 +1,9 @@
 $gray: #333;
-$lightgray: rgba(51,51,51,.75);
+$lightgray: rgba(51, 51, 51, 0.75);
 
 body {
   margin: 0;
-  padding: 0
+  padding: 0;
 }
 
 .container {
@@ -43,11 +43,11 @@ body {
       color: $gray;
     }
     &__position {
-      color: $lightgray
+      color: $lightgray;
     }
     &__description {
       color: $lightgray;
-      font-size: 16px
+      font-size: 16px;
     }
   }
 
@@ -57,15 +57,17 @@ body {
     &__network {
       vertical-align: top;
       padding: 10px;
-      opacity: .5;
+      opacity: 0.5;
       border: 1px solid transparent;
       border-radius: 50%;
 
-      &:visited, &:hover {
+      &:visited,
+      &:hover {
         color: $gray;
-        text-decoration: none
+        text-decoration: none;
       }
-      &:hover, &:active {
+      &:hover,
+      &:active {
         opacity: 1;
         border-color: $gray;
       }

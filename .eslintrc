@@ -1,25 +1,5 @@
 {
-    "extends": "airbnb",
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es6": true,
-        "node": true
-    },
-    "rules": {
-        "indent": [
-            "error",
-            4
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "double"
-        ],
-        "comma-dangle":["error", "never"],
-        "no-console": ["error", { "allow": ["warn", "error", "info"] }]
-    }
+  "extends": [
+    "prettier"
+  ]
 }
