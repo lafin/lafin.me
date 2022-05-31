@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.profile {
+  text-align: center;
+  font-family: verdana, sans-serif;
+  padding: 5px;
+  /* Height status bar in iOS 11.0 */
+  padding-top: constant(safe-area-inset-top);
+  /* Height status bar in iOS 11+ */
+  padding-top: env(safe-area-inset-top);
+  max-width: 450px;
+}
+
+.profile .avatar {
+  display: inline-block;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 2px 0 #fff;
+}
+
+.profile .avatar img {
+  height: 200px;
+  width: 200px;
+}
+
+.profile .card__name {
+  color: #333;
+}
+
+.profile .card__position {
+  color: rgba(51, 51, 51, 0.75);
+}
+
+.profile .card__description {
+  color: rgba(51, 51, 51, 0.75);
+  font-size: 16px;
+}
+
+.profile .networks {
+  margin: 0 auto;
+}
+
+.profile .networks__network {
+  vertical-align: top;
+  padding: 10px;
+  opacity: 0.5;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  display: inline-flex;
+}
+
+.profile .networks__network:visited,
+.profile .networks__network:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.profile .networks__network:hover,
+.profile .networks__network:active {
+  opacity: 1;
+  border-color: #333;
+}
+
+.profile .networks__network svg {
+  width: 20px;
+  height: 20px;
+}
